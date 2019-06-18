@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ViewModelFun.Models;
 
 namespace ViewModelFun.Controllers
 {
@@ -8,33 +9,37 @@ namespace ViewModelFun.Controllers
         // Index
         [HttpGet]
         [Route ("")]
-        public ViewResult Index ()
+        public IActionResult Index ()
         {
-            return View ();
+            Message message = new Message ();
+            return View ("Index", message);
         }
 
         // Numbers
         [HttpGet]
         [Route ("numbers")]
-        public ViewResult Numbers ()
+        public IActionResult Numbers ()
         {
-            return View ("Numbers");
+            Numbers numbers = new Numbers ();
+            return View ("Numbers", numbers);
         }
 
         // Users
         [HttpGet]
         [Route ("users")]
-        public ViewResult Users ()
+        public IActionResult Users ()
         {
-            return View ("Users");
+            Users users = new Users ();
+            return View ("Users", users);
         }
 
         // User
         [HttpGet]
         [Route ("user")]
-        public ViewResult User ()
+        public IActionResult DisplayUser ()
         {
-            return View ("User");
+            User user = new User ();
+            return View ("User", user);
         }
 
     }

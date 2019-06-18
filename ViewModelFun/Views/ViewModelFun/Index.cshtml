@@ -10,10 +10,11 @@
     <title>Message</title>
 </head>
 <body>
-    <div class="message-container">
-        <h1 class="message-title">Here is a Message!</h1>
+    <div class="message-container container">
+        <h4 class="message-title title-text">Here is a Message!</h4>
         <div class="message-text">
-
+            @model ViewModelFun.Models.Message
+            @Model.MessageText
         </div>
     </div>
 </body>

@@ -1,3 +1,5 @@
+@using ViewModelFun.Models
+@model Users
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +12,15 @@
     <title>Users</title>
 </head>
 <body>
-    <div class="message-container">
-        <h1 class="message-title">Here is a Message!</h1>
-        <div class="message-text">
-                
+    <div class="users-container container">
+        <h4 class="users-title title-text">Here are some users!</h4>
+        <div class="users-text text-box">
+            @{
+                foreach (var user in @Model.UserList)
+                {
+                    <p>@user.FirstName @user.LastName</p>
+                }
+            }
         </div>
     </div>
 </body>

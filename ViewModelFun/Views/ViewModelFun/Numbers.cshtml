@@ -1,3 +1,5 @@
+@using ViewModelFun.Models
+@model Numbers
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +12,15 @@
     <title>Numbers</title>
 </head>
 <body>
-    <div class="message-container">
-        <h1 class="message-title">Here is a Message!</h1>
-        <div class="message-text">
-                
+    <div class="numbers-container container">
+        <h4 class="numbers-title title-text">Here are some numbers!</h4>
+        <div class="numbers-text text-box">
+            @{
+                for(int i = 0; i < @Model.NumArray.Length; i++)
+                {
+                    <p>@Model.NumArray[i]</p>
+                }
+            }
         </div>
     </div>
 </body>
